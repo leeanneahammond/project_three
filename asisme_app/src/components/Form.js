@@ -75,7 +75,7 @@ class Form extends React.Component {
     render() {
         return(
         <form onSubmit={this.handleSubmit}>
-            <label htmlFor="name"></label>
+            <label htmlFor="name">Name</label>
                 <input 
                     type="text" 
                     id="name" 
@@ -85,7 +85,7 @@ class Form extends React.Component {
                     placeholder="NAME"
                 />
                 
-            <label htmlFor="email"></label>
+            <label htmlFor="email">Email</label>
                 <input 
                     type="email" 
                     id="email" 
@@ -104,7 +104,7 @@ class Form extends React.Component {
                     ))}
                 </select> 
 
-            <label htmlFor="city"></label>
+            <label htmlFor="city">City</label>
                 <input 
                     type="text" 
                     id="city" 
@@ -123,7 +123,7 @@ class Form extends React.Component {
                 </select>
                 <br></br>
 
-            <label htmlFor="request"></label>
+            <label htmlFor="request">Request</label>
                 <input 
                     type="text" 
                     id="request" 
