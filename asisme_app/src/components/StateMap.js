@@ -26,21 +26,9 @@ class StateMap extends React.Component {
             .catch(err => console.log(err))
     }
 
-    // mapHandler = (event) => {
-    //     this.state.info.map(statePicked => {
-    //         if(event.target.dataset.name == statePicked.states){
-    //             this.setState({stateHash: statePicked.hash}, () => {
-    //                 if(this.state.stateHash) {
-
-    //                 }
-    //             })
-    //         }
-    //     })
-    //   };
-
     mapHandler = (event) => {
         this.state.info.map(statePicked => {
-            if(event.target.dataset.name == statePicked.states){
+            if(event.target.dataset.name === statePicked.states){
                 this.setState({stateHash: statePicked.hash,redirect: true})
             }
         })
@@ -48,7 +36,7 @@ class StateMap extends React.Component {
 
       renderRedirect = () => {
         if (this.state.redirect) {
-          return <Redirect to={{pathname: `/state/${this.state.stateHash}`, state: {info: this.state.stateHash}}} />
+          return <Redirect push to={{pathname: `/state/${this.state.stateHash}`, state: {info: this.state.stateHash}}} />
         }
     }
       
