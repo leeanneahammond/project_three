@@ -1,6 +1,7 @@
 import React from "react"
 import Form from "./Form"
 
+
 const Url = "https://covidtracking.com/api/states?hash="
 
 let baseURL = process.env.REACT_APP_BASEURL
@@ -99,6 +100,17 @@ class State extends React.Component {
         })
       }
 
+      deleteRequest = (id) => {
+        fetch(baseURL + '/requests/' + id, {
+          method: 'DELETE'
+        }).then(response => {
+          const requestsArr = this.state.requests.filter( request => {
+            return request._id !== id
+          })
+          this.setState({requests: requestsArr})
+        })
+      }
+
 
     render(){
         console.log("requests", this.requests)
@@ -129,7 +141,8 @@ class State extends React.Component {
                                <p>{requests.name} <strong> {requests.email} </strong> <strong>{requests.SupportNumber}</strong></p> 
                                <p>{requests.city} <strong> {requests.severity} </strong></p> 
                                <p>{requests.request}</p>
-                               <p onClick={() => this.addSupport(requests)}>I Support You: {requests.support}</p>
+                               <p><img onClick={() => this.addSupport(requests)} src="/heart.png" alt="Support Button"/> {requests.support}</p>
+                               <button onClick={() =>this.deleteRequest(requests._id)}>DELETE</button>
                             </div>
                             : null
                     ))} 
