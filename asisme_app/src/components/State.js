@@ -82,6 +82,23 @@ class State extends React.Component {
         })
       }
 
+      addSupport = (request) => {
+        //holidays.put("/:id")
+        fetch(baseURL + '/requests/' + request._id, {
+          method: 'PUT',
+          body: JSON.stringify({support: request.support + 1}),
+          headers: {
+            'Content-Type' : 'application/json'
+          }
+        }).then(res => res.json())
+        .then(resJson => {
+             const copyRequests = [...this.state.requests]
+              const findIndex = this.state.requests.findIndex(request => request._id === resJson._id)
+              copyRequests[findIndex].support = resJson.support;
+              this.setState({requests: copyRequests})
+        })
+      }
+
 
     render(){
         console.log("requests", this.requests)
@@ -112,6 +129,7 @@ class State extends React.Component {
                                <p>{requests.name} <strong> {requests.email} </strong> <strong>{requests.SupportNumber}</strong></p> 
                                <p>{requests.city} <strong> {requests.severity} </strong></p> 
                                <p>{requests.request}</p>
+                               <p onClick={() => this.addSupport(requests)}>I Support You: {requests.support}</p>
                             </div>
                             : null
                     ))} 
