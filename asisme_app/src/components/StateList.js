@@ -5,6 +5,7 @@ import { Link } from "react-router-dom";
 
 const StateList = props => (
     <>
+    <h1><strong>STATES</strong></h1>
      <ul >
         {props.info.map(info => (
                 <li key={info.states}>
