@@ -141,7 +141,7 @@ class State extends React.Component {
                                <p>{requests.name} <strong> {requests.email} </strong> <strong>{requests.SupportNumber}</strong></p> 
                                <p>{requests.city} <strong> {requests.severity} </strong></p> 
                                <p>{requests.request}</p>
-                               <p><img onClick={() => this.addSupport(requests)} src="/heart.png" alt="Support Button"/> {requests.support}</p>
+                               <p><img className="SupportBtn" onClick={() => this.addSupport(requests)} src="/heart.png" alt="Support Button"/> {requests.support}</p>
                                <button onClick={() =>this.deleteRequest(requests._id)}>DELETE</button>
                             </div>
                             : null

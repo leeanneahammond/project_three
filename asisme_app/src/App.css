@@ -89,7 +89,7 @@ body {
   width: 100%;
   background: rgb(12,64,96);
   background: linear-gradient(232deg, rgba(12,64,96,1) 14%, rgba(24,94,124,1) 34%, rgba(95,182,101,1) 62%, rgba(201,204,68,1) 97%);  background-size: cover;
-  background-repeat: repeat;
+  background-repeat: no-repeat;
 }
 
 html {
@@ -98,6 +98,10 @@ html {
 
 .StatePage {
   height: 100vh;
+}
+
+.SupportBtn:hover {
+  cursor: pointer;
 }
 
 /* form */
