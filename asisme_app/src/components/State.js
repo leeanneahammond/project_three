@@ -117,7 +117,7 @@ class State extends React.Component {
         console.log("state", this.state)
         console.log("props", this.props)
         return(
-            <div>
+            <div className="StatePage">
                 <Form
                 baseURL={baseURL}
                 handleAddRequest={this.handleAddRequest}
