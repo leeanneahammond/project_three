@@ -67,52 +67,44 @@ class Form extends React.Component {
         this.setState({ [event.target.id]: event.target.value})
       }
 
-
-
-
-
-
     render() {
         return(
-        <form onSubmit={this.handleSubmit}>
-            <label htmlFor="name">Name</label>
+        <form onSubmit={this.handleSubmit} id="form">
+            <label htmlFor="name">Name: </label>
                 <input 
                     type="text" 
                     id="name" 
                     name="name" 
                     onChange={this.handleChange} 
                     value={this.state.name} 
-                    placeholder="NAME"
                 />
                 
-            <label htmlFor="email">Email</label>
+            <label htmlFor="email">Email: </label>
                 <input 
                     type="email" 
                     id="email" 
                     name="email" 
                     onChange={this.handleChange} 
                     value={this.state.email} 
-                    placeholder="EMAIL"
                 />
                 <br></br>
 
-            <label htmlFor="State"></label>
-                <select placeholder="State" id="state" name="state" onChange={this.handleChange} value={this.state.state} >
-                    <option value="">State</option>
-                    {this.state.info.map((info, index) => (
-                        <option key={index} value={info.states}>{info.states}</option>
-                    ))}
-                </select> 
-
-            <label htmlFor="city">City</label>
+            <label htmlFor="city">City: </label>
                 <input 
                     type="text" 
                     id="city" 
                     name="city" 
                     onChange={this.handleChange} 
                     value={this.state.city} 
-                    placeholder="CITY"
                 />  
+
+            <label htmlFor="State"></label>
+                <select placeholder="State" id="state" name="state" onChange={this.handleChange} value={this.state.state} >
+                    <option value="">STATE</option>
+                    {this.state.info.map((info, index) => (
+                        <option key={index} value={info.states}>{info.states}</option>
+                    ))}
+                </select> 
 
             <label htmlFor="severity"></label>
                 <select onChange={this.handleChange} id="severity" name="severity" value={this.state.severity} >
@@ -123,17 +115,26 @@ class Form extends React.Component {
                 </select>
                 <br></br>
 
-            <label htmlFor="request">Request</label>
-                <input 
+            <label htmlFor="request"></label>
+                <textarea 
+                    rows="3" 
+                    cols="20"
                     type="text" 
                     id="request" 
                     name="request" 
                     onChange={this.handleChange} 
-                    value={this.state.request} 
-                    placeholder="REQUEST"
-                />    
+                    value={this.state.request}>
+                </textarea>
+                {/* <input 
+                    type="text" 
+                    id="request" 
+                    name="request" 
+                    onChange={this.handleChange} 
+                    value={this.state.request}
+                    placeholder="Request"
+                />     */}
                 <br></br>
-                <input type="submit" value="Submit"/>
+                <input id="button" type="submit" value="Submit Request"/>
         </form>
         )
     }
