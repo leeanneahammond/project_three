@@ -138,11 +138,18 @@ class State extends React.Component {
                     {this.state.requests.map(requests => (
                         requests.state === this.state.activeState.state ?
                             <div className="request" key={requests._id}>
-                               <p>{requests.name} <strong> {requests.email} </strong> <strong>{requests.SupportNumber}</strong></p> 
-                               <p><img className="SupportBtn" onClick={() => this.addSupport(requests)} src="/heart.png" alt="Support Button"/> {requests.support}</p>
-                               <p>{requests.city} <strong> {requests.severity} </strong></p> 
+                               <p className="top-request">{requests.name} 
+                               <strong> {requests.email} </strong> 
+                               <strong>{requests.SupportNumber}</strong> 
+                               <span className="the-city">{requests.city}</span>
+                               <strong>{requests.severity}</strong>
+                               <img className="SupportBtn" onClick={() => this.addSupport(requests)} src="/heart.png" alt="Support Button"/> <span className="like" >{requests.support}</span>
+                               </p> 
+                               
+                               <p className="x" onClick={() =>this.deleteRequest(requests._id)}>X</p>
+                                
                                <p>{requests.request}</p>
-                               <button onClick={() =>this.deleteRequest(requests._id)}>DELETE</button>
+                               
                             </div>
                             : null
                     ))} 
