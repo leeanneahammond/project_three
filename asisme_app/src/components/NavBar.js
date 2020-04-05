@@ -1,18 +1,5 @@
 import React from 'react'
-import { Route, Link } from "react-router-dom";
-
-  
-  function About() {
-    return (
-      <>
-        <h2>About</h2>
-        <p>
-          ljksflkf skjlafsdkjlfasdjklfas djklfads kjlfadskjfads jkllafksjdklfj
-          adslkjfads{" "}
-        </p>
-      </>
-    );
-  }
+import { Link } from "react-router-dom";
 
 
 class NavBar extends React.Component {
@@ -28,14 +15,8 @@ class NavBar extends React.Component {
                         <li>
                             <span className="Logo"><Link to="/">ASIS-ME</Link></span><br />
                         </li>
-                        <li>
-                        <Link to="/aboutus/">About</Link>
-                        </li>
                     </ul>
                 </nav>
-                <div>
-                    <Route path="/aboutus/" exact component={About} />
-                </div>
             </div>
         )
     }
