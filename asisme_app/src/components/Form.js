@@ -108,10 +108,10 @@ class Form extends React.Component {
 
             <label htmlFor="severity"></label>
                 <select onChange={this.handleChange} id="severity" name="severity" value={this.state.severity} >
-                    <option value="high">SEVERITY</option>
-                     <option value="high">High</option>
-                     <option value="medium">Medium</option>
-                     <option value="low">Low</option>
+                    <option value="">SEVERITY</option>
+                     <option value="High">High</option>
+                     <option value="Medium">Medium</option>
+                     <option value="Low">Low</option>
                 </select>
                 <br></br>
 

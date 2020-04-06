@@ -138,18 +138,22 @@ class State extends React.Component {
                     {this.state.requests.map(requests => (
                         requests.state === this.state.activeState.state ?
                             <div className="request" key={requests._id}>
-                               <p className="top-request">{requests.name} 
-                               <strong> {requests.email} </strong> 
-                               <strong>{requests.SupportNumber}</strong> 
-                               <span className="the-city">{requests.city}</span>
-                               <strong>{requests.severity}</strong>
-                               <img className="SupportBtn" onClick={() => this.addSupport(requests)} src="/heart.png" alt="Support Button"/> <span className="like" >{requests.support}</span>
-                               </p> 
-                               
-                               <p className="x" onClick={() =>this.deleteRequest(requests._id)}>X</p>
+                                <div className="title">
+                                  <p className="n">{requests.name}</p>
+                                  <a className="e" href={`mailto: ${requests.email}`} > {requests.email} </a> 
+                                  <p className="l">{requests.city}</p>
+                                  <p className="s">{requests.severity}</p>
+                                  
+                                  <div className="sup-img">
+                                      <img className="SupportBtn" onClick={() => this.addSupport(requests)} src="/heart.png" alt="Support Button"/> <span className="like" >{requests.support}</span>
+                                  </div>
+                                </div> 
+
+                                <p className="x" onClick={() =>this.deleteRequest(requests._id)}>X</p>
                                 
-                               <p>{requests.request}</p>
-                               
+                                <div className="word">
+                                  {requests.request}
+                                </div>   
                             </div>
                             : null
                     ))} 
