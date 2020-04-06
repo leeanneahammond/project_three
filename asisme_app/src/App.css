@@ -40,6 +40,9 @@
   font-size: 17px;
   margin-right: 400px;
   margin-top: 75px;
+  color: white;
+  font-weight: bold;
+
 }
 
 .darkred {
@@ -60,6 +63,11 @@
   background: #fbb021;
 }
 
+.colors span {
+  font-family: "Neuton", sans-serif;
+  font-size: 17px;
+  
+}
 
 /* MAP */
 path {
