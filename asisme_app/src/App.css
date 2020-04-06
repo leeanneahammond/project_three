@@ -374,5 +374,6 @@ a {
 
   margin-left: 20px;
   text-align: left;
+  overflow: hidden;
 }
 
