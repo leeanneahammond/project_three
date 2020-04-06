@@ -385,3 +385,39 @@ a {
   overflow: hidden;
 }
 
+.states ul {
+  padding-left: 0;
+}
+
+.DC2 {
+  fill:#FBB021;
+}
+
+@media only screen and (max-width: 800px) {
+  .us-state-map {
+    width:750px
+  }
+  .states ul {
+    padding-left: 0;
+  }
+}
+
+@media only screen and (max-width: 415px) {
+  .us-state-map {
+    width:350px;
+    height: 350px
+  }
+  .container {
+    margin-top: 0;
+  }
+  .colors {
+    margin-top: 50px;
+    margin-right: 25px;
+  }
+  .states ul {
+    padding-left: 0;
+  }
+}
+
+
+
